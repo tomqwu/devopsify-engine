@@ -1,0 +1,23 @@
+# Deep Native Engine Configuration
+# See configs/examples/multi-cloud.yaml for a full example
+
+engine:
+  log_level: info
+
+# Provider configurations
+# Each provider needs: name, provider (type), kind (cloud/pipeline/sre), config
+providers: []
+
+# Insights engine settings
+insights:
+  enabled: true
+  cost_threshold: 100.0        # Alert when total spend exceeds this amount
+  drift_check_enabled: true     # Enable drift detection
+  anomaly_z_score: 2.0          # Z-score threshold for anomaly detection
+
+# API server settings
+api:
+  address: ":8080"
+  read_timeout: 30              # seconds
+  write_timeout: 30             # seconds
+  shutdown_timeout: 15          # seconds
