@@ -37,8 +37,8 @@ type ResourcePayload struct {
 
 // DriftPayload carries drift detection event data.
 type DriftPayload struct {
-	Provider string                `json:"provider"`
-	Count    int                   `json:"count"`
+	Provider string                 `json:"provider"`
+	Count    int                    `json:"count"`
 	Results  []resource.DriftResult `json:"results"`
 }
 

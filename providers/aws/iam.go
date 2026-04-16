@@ -2,7 +2,6 @@ package aws
 
 import (
 	"context"
-	"time"
 
 	"github.com/deepnative/engine/pkg/resource"
 )
@@ -12,19 +11,4 @@ import (
 func listIAMUsers(_ context.Context, _ *AuthConfig, region string) ([]resource.Resource, error) {
 	_ = region
 	return []resource.Resource{}, nil
-}
-
-// newIAMResource creates a universal resource from IAM user data.
-func newIAMResource(id, name string, tags map[string]string) resource.Resource {
-	return resource.Resource{
-		ID:        id,
-		Name:      name,
-		Type:      "identity:user",
-		Provider:  "aws",
-		Region:    "global",
-		State:     resource.StateHealthy,
-		Tags:      tags,
-		CreatedAt: time.Now(),
-		UpdatedAt: time.Now(),
-	}
 }

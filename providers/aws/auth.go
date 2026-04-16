@@ -19,7 +19,7 @@ const (
 // AuthConfig holds AWS authentication settings.
 type AuthConfig struct {
 	AccessKeyID     string
-	SecretAccessKey  string
+	SecretAccessKey string
 	SessionToken    string
 	Region          string
 	Profile         string
@@ -72,10 +72,6 @@ func validateAuth(auth *AuthConfig) error {
 		}
 	}
 	return nil
-}
-
-func authMethod(auth *AuthConfig) string {
-	return string(auth.Method)
 }
 
 func getStringOr(cfg map[string]any, key, defaultVal string) string {

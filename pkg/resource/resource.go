@@ -6,14 +6,14 @@ import "time"
 type State string
 
 const (
-	StateRunning      State = "running"
-	StateStopped      State = "stopped"
-	StateTerminated   State = "terminated"
-	StatePending      State = "pending"
-	StateUnknown      State = "unknown"
-	StateDegraded     State = "degraded"
-	StateHealthy      State = "healthy"
-	StateUnhealthy    State = "unhealthy"
+	StateRunning    State = "running"
+	StateStopped    State = "stopped"
+	StateTerminated State = "terminated"
+	StatePending    State = "pending"
+	StateUnknown    State = "unknown"
+	StateDegraded   State = "degraded"
+	StateHealthy    State = "healthy"
+	StateUnhealthy  State = "unhealthy"
 )
 
 // DriftType classifies the kind of drift detected.

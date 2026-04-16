@@ -12,6 +12,7 @@ import (
 	"github.com/deepnative/engine/internal/config"
 	"github.com/deepnative/engine/internal/engine"
 	"github.com/deepnative/engine/internal/insights"
+	"github.com/deepnative/engine/pkg/provider"
 	"github.com/deepnative/engine/providers/argocd"
 	"github.com/deepnative/engine/providers/aws"
 	"github.com/deepnative/engine/providers/azure"
@@ -22,7 +23,6 @@ import (
 	"github.com/deepnative/engine/providers/jenkins"
 	"github.com/deepnative/engine/providers/opsgenie"
 	"github.com/deepnative/engine/providers/pagerduty"
-	"github.com/deepnative/engine/pkg/provider"
 )
 
 var providerFactory = map[string]func() provider.Provider{

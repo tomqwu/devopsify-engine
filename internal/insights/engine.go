@@ -27,19 +27,19 @@ type Finding struct {
 
 // AnalysisResult contains all findings from a complete analysis run.
 type AnalysisResult struct {
-	Findings        []Finding                            `json:"findings"`
-	Recommendations []recommendation.Recommendation      `json:"recommendations"`
-	RunAt           time.Time                            `json:"run_at"`
-	Duration        time.Duration                        `json:"duration"`
+	Findings        []Finding                       `json:"findings"`
+	Recommendations []recommendation.Recommendation `json:"recommendations"`
+	RunAt           time.Time                       `json:"run_at"`
+	Duration        time.Duration                   `json:"duration"`
 }
 
 // Engine orchestrates all insight analyzers.
 type Engine struct {
-	costAnalyzer   *cost.Analyzer
-	driftDetector  *drift.Detector
-	anomalyDetect  *anomaly.Detector
-	recommender    *recommendation.Recommender
-	logger         *log.Logger
+	costAnalyzer  *cost.Analyzer
+	driftDetector *drift.Detector
+	anomalyDetect *anomaly.Detector
+	recommender   *recommendation.Recommender
+	logger        *log.Logger
 }
 
 // NewEngine creates a new insights engine.

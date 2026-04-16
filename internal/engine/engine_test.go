@@ -16,10 +16,10 @@ type mockProvider struct {
 	shutdownErr error
 }
 
-func (m *mockProvider) Metadata() provider.Metadata             { return m.meta }
+func (m *mockProvider) Metadata() provider.Metadata                    { return m.meta }
 func (m *mockProvider) Init(_ context.Context, _ map[string]any) error { return m.initErr }
-func (m *mockProvider) Healthy(_ context.Context) error         { return m.healthyErr }
-func (m *mockProvider) Shutdown(_ context.Context) error        { return m.shutdownErr }
+func (m *mockProvider) Healthy(_ context.Context) error                { return m.healthyErr }
+func (m *mockProvider) Shutdown(_ context.Context) error               { return m.shutdownErr }
 
 func TestNewEngine(t *testing.T) {
 	cfg := config.Default()

@@ -23,13 +23,13 @@ type Pipeline struct {
 
 // PipelineStatus represents the current state of a pipeline.
 type PipelineStatus struct {
-	ID          string
-	Name        string
-	Phase       string // "synced", "progressing", "degraded", "failed", "unknown"
-	Health      string
-	Message     string
-	LastSyncAt  time.Time
-	SyncedAt    time.Time
+	ID         string
+	Name       string
+	Phase      string // "synced", "progressing", "degraded", "failed", "unknown"
+	Health     string
+	Message    string
+	LastSyncAt time.Time
+	SyncedAt   time.Time
 }
 
 // SyncOptions controls how a pipeline sync is triggered.
