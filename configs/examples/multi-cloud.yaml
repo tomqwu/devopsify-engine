@@ -1,0 +1,73 @@
+# Deep Native Engine - Multi-Cloud Configuration Example
+# This example shows a full production-like setup with multiple providers
+
+engine:
+  log_level: info
+
+providers:
+  # Cloud Providers
+  - name: aws-production
+    provider: aws
+    kind: cloud
+    config:
+      region: us-east-1
+      access_key_id_env: AWS_ACCESS_KEY_ID
+      secret_access_key_env: AWS_SECRET_ACCESS_KEY
+
+  - name: aws-staging
+    provider: aws
+    kind: cloud
+    config:
+      region: us-west-2
+      profile: staging
+
+  - name: azure-production
+    provider: azure
+    kind: cloud
+    config:
+      subscription_id_env: AZURE_SUBSCRIPTION_ID
+      tenant_id_env: AZURE_TENANT_ID
+      client_id_env: AZURE_CLIENT_ID
+      client_secret_env: AZURE_CLIENT_SECRET
+
+  - name: gcp-production
+    provider: gcp
+    kind: cloud
+    config:
+      project_env: GCP_PROJECT_ID
+      credentials_file: /etc/dne/gcp-credentials.json
+
+  # Pipeline Providers
+  - name: argocd-main
+    provider: argocd
+    kind: pipeline
+    config:
+      server_env: ARGOCD_SERVER
+      token_env: ARGOCD_AUTH_TOKEN
+
+  - name: github-actions
+    provider: github-actions
+    kind: pipeline
+    config:
+      owner: deepnative
+      repo: infrastructure
+      token_env: GITHUB_TOKEN
+
+  # SRE Providers
+  - name: pagerduty
+    provider: pagerduty
+    kind: sre
+    config:
+      api_key_env: PAGERDUTY_API_KEY
+
+insights:
+  enabled: true
+  cost_threshold: 5000.0
+  drift_check_enabled: true
+  anomaly_z_score: 2.5
+
+api:
+  address: ":8080"
+  read_timeout: 30
+  write_timeout: 30
+  shutdown_timeout: 15
