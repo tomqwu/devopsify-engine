@@ -4,7 +4,7 @@ BINARY_CLI=bin/dne
 BINARY_SERVER=bin/dne-server
 MODULE=github.com/deepnative/engine
 
-build: fmt
+build:
 	go build -o $(BINARY_CLI) ./cmd/dne
 	go build -o $(BINARY_SERVER) ./cmd/dne-server
 
